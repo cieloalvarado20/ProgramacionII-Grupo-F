@@ -1,6 +1,36 @@
 #importacion de las librerias
 import tkinter as tk
 from tkinter import ttk, messagebox
+#lista de pacientes(iniciativa vacia)
+doctores_data=[]
+#funcion registrar paciente
+def registrarDoctor():
+    #crear un diccionario con los datos ingresados
+    doctor={
+        "Nombre": nombreP.get(),
+        "Especialidad": especialidad.get(),
+        "Edad": spin.get(),
+        "Telefono": entryTelefono.get(),
+    }
+    #agregar paciente a la lista
+    doctores_data.append(doctor)
+    #cargar el treewiew
+    cargar_treeview()
+def cargar_treeview():
+    #Limpiar el treeview
+    for doctor in treeview.get_children():
+        treeview.delete(doctor)
+        #insertar cada paciente
+    for i, item in enumerate(doctores_data):
+        treeview.insert(
+            "","end", iid=str(i),
+            values=(
+                item["Nombre"],
+                item["Especialidad"],
+                item["Edad"],
+                item["Telefono"],
+                )
+        )
 ventana_principal= tk.Tk()
 ventana_principal.title("Libro de Pacientes y Doctores")
 ventana_principal.geometry("400x600")
@@ -45,7 +75,7 @@ entryTelefono.grid(row=9, column=1, sticky="w", padx=5, pady=5)
 btn_frame=tk.Frame(frame_doctores)
 btn_frame.grid(row=10, column=0, columnspan=2, padx=5, pady=5, sticky="w")
 #Boton Registrar
-btn_registrar=tk.Button(btn_frame, text="Registrar", command="")
+btn_registrar=tk.Button(btn_frame, text="Registrar", command=registrarDoctor)
 btn_registrar.grid(row=0, column=4, padx=5, pady=5)
 btn_registrar.configure(bg="#008000")
 #Boton Eliminar
@@ -71,5 +101,3 @@ scroll_y=ttk.Scrollbar(frame_doctores, orient="vertical", command=treeview.yview
 scroll_y.grid(row=11, column=2, sticky="ns")
  
 ventana_principal.mainloop()
- 
- 
