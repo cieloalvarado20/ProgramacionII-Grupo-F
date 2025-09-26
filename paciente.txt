@@ -1,5 +1,3 @@
-cieko|20-10-2006|19|Masculino|orh+|Publico|Hospital Central
-Luis Eduardo|30-08-2004|21|Masculino|ORH+|Publico|Hospital Central
-carla |02-07-2010|15|Femenino|orh+|Publico|Hospital Central
-natividad|25-12-1977|48|Femenino|orh+|Publico|Hospital Central
-guillermo|10-02-1978|47|Femenino|orh+|Publico|Hospital Central
+Cielo Alvarado|20-10-2006|19|Femenino|ORH+|Publico|Hospital Central|1.50
+Carla Padilla|02-06-2010|15|Femenino|ORH+|Privado|Clinica Norte|1.72
+Javier Perez|15-08-2014|11|Masculino|ORH-|Privado|Centro Sur|1.50
